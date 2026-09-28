@@ -1,0 +1,103 @@
+/* ==========================================================================
+   FÄRGTEMAN
+   --------------------------------------------------------------------------
+   Byt tema genom att ändra data-theme på <html> i index.html, t.ex.:
+     <html lang="sv" data-theme="skog">
+
+   Förhandsgranska alla teman: öppna sidan med ?teman i adressen
+   (t.ex. index.html?teman) så visas en temaväljare nere till höger.
+
+   Nytt tema? Kopiera ett block nedan, ge det ett nytt namn och justera färgerna.
+   --alt-text-muted / --alt-accent används i sektioner med --bg-alt, så att
+   texten har bra kontrast även när --bg-alt är en mörkare färg.
+
+   Alla färger på sidan kommer från dessa variabler – inga andra filer behöver ändras.
+   ========================================================================== */
+
+/* --- Västkust (standard): varmvitt, granitgrått och dimmigt havsblått --- */
+:root,
+[data-theme="vastkust"] {
+  --bg:            #F7F5F0;  /* sidans bakgrund */
+  --bg-alt:        #A5B2C6;  /* varannan sektion */
+  --surface:       #FFFFFF;  /* kort/rutor */
+  --text:          #2A323C;  /* brödtext */
+  --text-muted:    #5E6773;  /* sekundär text */
+  --heading:       #1F2B3A;  /* rubriker */
+  --accent:        #3D5A7A;  /* havsblå accent: knappar, detaljer */
+  --accent-strong: #2C4360;  /* accent vid hover */
+  --accent-soft:   #DCE3EE;  /* ljus accent: bakgrunder, ramar */
+  --on-accent:     #FFFFFF;  /* text på accentfärg */
+  --line:          #D9DDE4;  /* tunna linjer */
+  --alt-text-muted:#34404F;  /* sekundär text på --bg-alt */
+  --alt-accent:    #233A56;  /* accent på --bg-alt */
+}
+
+/* --- Skog: salviagrönt och linne --- */
+[data-theme="skog"] {
+  --bg:            #F5F4EF;
+  --bg-alt:        #ACB792;
+  --surface:       #FFFFFF;
+  --text:          #2D3228;
+  --text-muted:    #62685A;
+  --heading:       #252B1E;
+  --accent:        #56663F;
+  --accent-strong: #414E2E;
+  --accent-soft:   #E3E8D6;
+  --on-accent:     #FFFFFF;
+  --line:          #DBDBCC;
+  --alt-text-muted:#3A4230;
+  --alt-accent:    #2F3A20;
+}
+
+/* --- Sand: varma naturtoner, ek och havre --- */
+[data-theme="sand"] {
+  --bg:            #F8F4EC;
+  --bg-alt:        #F0EADF;
+  --surface:       #FFFDF9;
+  --text:          #3A342D;
+  --text-muted:    #776E63;
+  --heading:       #342E27;
+  --accent:        #9A7F62;
+  --accent-strong: #7D644A;
+  --accent-soft:   #EADFD0;
+  --on-accent:     #FFFFFF;
+  --line:          #E2D9CB;
+  --alt-text-muted:#776E63;
+  --alt-accent:    #9A7F62;
+}
+
+/* --- Skymning: mörkt tema, havet efter solnedgången --- */
+[data-theme="skymning"] {
+  --bg:            #1E2428;
+  --bg-alt:        #242C31;
+  --surface:       #2A3338;
+  --text:          #E6E2DA;
+  --text-muted:    #A3A9AC;
+  --heading:       #F1EDE6;
+  --accent:        #9DB6C6;
+  --accent-strong: #B9CDD9;
+  --accent-soft:   #34434C;
+  --on-accent:     #1E2428;
+  --line:          #3A454B;
+  --alt-text-muted:#A3A9AC;
+  --alt-accent:    #9DB6C6;
+}
+
+/* --- Solnedgång: skymningsblått med varmt aprikosljus från solnedgången --- */
+[data-theme="solnedgang"] {
+  --bg:            #434656;  /* skymningsblå */
+  --bg-alt:        #5E4D58;  /* dov rosa/plommon */
+  --surface:       #3B3E4D;
+  --text:          #F3EAE2;
+  --text-muted:    #CDC3C3;
+  --heading:       #FBF2EA;
+  --accent:        #F3B08A;  /* aprikos solnedgång */
+  --accent-strong: #F8C8A8;
+  --accent-soft:   #5C4E58;
+  --on-accent:     #2E2A30;
+  --line:          #5B5E6E;
+  --alt-text-muted:#E0D2D0;
+  --alt-accent:    #F8C3A0;
+  /* valfritt: bakgrund för toppen av sidan (andra teman saknar den och blir enfärgade) */
+  --hero-bg:       linear-gradient(180deg, #434656 0%, #564A5A 55%, #7A5A5E 85%, #9A6A60 100%);
+}

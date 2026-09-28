@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!-- Byt färgtema här: vastkust | skog | sand | skymning | solnedgang  (se css/themes.css) -->
+<html lang="sv" data-theme="solnedgang">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Malin & Gustav · 11 september 2027</title>
+  <meta name="description" content="Malin Jonsson och Gustav Svensson gifter sig i Grebbestad kyrka den 11 september 2027.">
+
+  <!-- Typsnitt (Google Fonts). Faller tillbaka på systemtypsnitt om de inte laddas. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Vågsymbol som återanvänds på sidan med <use href="#waves"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="waves" viewBox="0 0 220 24">
+      <path d="M0 8 Q 13.75 0 27.5 8 T 55 8 T 82.5 8 T 110 8 T 137.5 8 T 165 8 T 192.5 8 T 220 8"
+            fill="none" stroke="currentColor" stroke-width="1"/>
+      <path d="M0 18 Q 13.75 10 27.5 18 T 55 18 T 82.5 18 T 110 18 T 137.5 18 T 165 18 T 192.5 18 T 220 18"
+            fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+    </symbol>
+  </svg>
+
+  <!-- ===================== NAVIGERING ===================== -->
+  <nav class="nav" aria-label="Huvudmeny">
+    <ul>
+      <li><a href="#dagen">Bröllopet</a></li>
+      <li><a href="#schema">Schema</a></li>
+      <li><a href="#sondag">Söndag</a></li>
+      <li><a href="#boende">Boende</a></li>
+      <li><a href="#osa">OSA</a></li>
+      <li><a href="#praktiskt">Praktiskt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <p class="eyebrow">Vi gifter oss</p>
+    <h1>Malin <span class="amp">&amp;</span> Gustav</h1>
+    <p class="date">11 september 2027</p>
+    <p class="place">Grebbestad · Bohuslän</p>
+
+    <svg class="waves" aria-hidden="true"><use href="#waves"/></svg>
+
+    <!-- Nedräkning – datum och tid ställs in i js/main.js -->
+    <div class="countdown" id="countdown" aria-label="Nedräkning till bröllopet">
+      <div><span class="num" data-unit="days">–</span><span class="label">Dagar</span></div>
+      <div><span class="num" data-unit="hours">–</span><span class="label">Timmar</span></div>
+      <div><span class="num" data-unit="minutes">–</span><span class="label">Minuter</span></div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== DAGEN: VIGSEL & FEST ===================== -->
+    <section class="section section--alt" id="dagen">
+      <div class="container reveal">
+        <p class="eyebrow">Välkomna</p>
+        <h2>Bröllopet</h2>
+        <p class="lead">
+          Vi ser så mycket fram emot att fira den här dagen tillsammans med er
+          – vid havet i Grebbestad, en tidig höstdag på västkusten.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <span class="tag">Öppen för alla</span>
+            <div class="time">14.00</div>
+            <h3>Vigsel</h3>
+            <p><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Grebbestad+kyrka" target="_blank" rel="noopener"><strong>Grebbestad kyrka</strong></a></p>
+            <p>Alla är varmt välkomna att dela vigseln med oss i kyrkan.</p>
+          </article>
+
+          <article class="card">
+            <span class="tag">För inbjudna gäster</span>
+            <div class="time">17.00</div>
+            <h3>Bröllopsfest</h3>
+            <p><a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Falkeröd+Grebbestad" target="_blank" rel="noopener"><strong>Falkeröd</strong></a></p>
+            <p>Middag, tal och dans in på natten för er som fått en inbjudan.</p>
+          </article>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn btn--ghost" href="kalender.ics" download>Lägg till i kalendern</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SCHEMA ===================== -->
+    <!-- Lägg till/ta bort rader genom att kopiera ett <li>-block. -->
+    <section class="section" id="schema">
+      <div class="container reveal">
+        <p class="eyebrow">Lördag 11 september</p>
+        <h2>Schema</h2>
+        <svg class="waves waves--small" aria-hidden="true"><use href="#waves"/></svg>
+
+        <ol class="timeline">
+          <li>
+            <span class="t">14.00</span>
+            <span class="what"><strong>Vigsel</strong><span>Grebbestad kyrka</span></span>
+          </li>
+          <li>
+            <span class="t">17.00</span>
+            <span class="what"><strong>Välkomstmingel</strong><span>Falkeröd</span></span>
+          </li>
+          <li>
+            <span class="t">18.30</span><!-- TODO: justera tid -->
+            <span class="what"><strong>Middag</strong><span>Tal, skratt och god mat</span></span>
+          </li>
+          <li>
+            <span class="t">22.00</span><!-- TODO: justera tid -->
+            <span class="what"><strong>Dans</strong><span>Till sent</span></span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== SÖNDAG: BRUNCH & BASTU ===================== -->
+    <section class="section section--alt" id="sondag">
+      <div class="container reveal">
+        <p class="eyebrow">Söndag 12 september</p>
+        <h2>Dagen efter</h2>
+        <p class="lead">
+          Stannar du kvar över söndagen? Då rundar vi gärna av helgen tillsammans
+          med en lugn förmiddag av brunch och bastu på
+          <a href="https://tanumstrand.se/" target="_blank" rel="noopener">TanumStrand Spa &amp; Resort</a>
+          – med havsutsikt, bastuvärme och gott om tid att prata om gårdagen.
+        </p>
+        <!-- TODO: lägg till tid när den är bestämd -->
+        <p>
+          Det är helt frivilligt och man kommer och går som man vill.
+          Brunch och bastu bokar och betalar var och en själv direkt hos TanumStrand.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== BOENDE ===================== -->
+    <section class="section" id="boende">
+      <div class="container reveal">
+        <p class="eyebrow">Resa &amp; boende</p>
+        <h2>Boende</h2>
+
+        <p class="lead">
+          Grebbestad och TanumStrand har gott om boende, från hotell till camping och stugor.
+          September är lugnare än sommaren, men boka gärna i god tid.
+        </p>
+
+        <!-- Lägg till ett boende genom att kopiera ett <li>-block. -->
+        <div class="cards">
+          <article class="card">
+            <h3>Hotell</h3>
+            <ul class="stay-list">
+              <li>
+                <a href="https://tanumstrand.se/" target="_blank" rel="noopener">TanumStrand Spa &amp; Resort</a>
+                <span>Hotellrum och stugor vid havet, med spa och restaurang.</span>
+              </li>
+              <li>
+                <a href="https://www.grebys.se/hotell" target="_blank" rel="noopener">Grebys Hotell</a>
+                <span>Litet hotell med nio rum mitt på bryggan i Grebbestad.</span>
+              </li>
+              <li>
+                <a href="https://www.grebbestadfjorden.com/hotellinformation/" target="_blank" rel="noopener">GrebbestadFjordens hotell</a>
+                <span>Hotellrum, flera med havsutsikt, och restaurang på området.</span>
+              </li>
+              <li>
+                <a href="http://grebbestadsvandrarhem.se/" target="_blank" rel="noopener">Grebbestads Vandrarhem</a>
+                <span>Enkelt och prisvärt boende nära hamnen.</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Camping &amp; stugor</h3>
+            <ul class="stay-list">
+              <li>
+                <a href="https://www.grebbestadfjorden.com/" target="_blank" rel="noopener">GrebbestadFjorden</a>
+                <span>Camping, stugor och glamping vid vattnet i Grebbestad.</span>
+              </li>
+              <li>
+                <a href="https://firstcamp.se/destinationer/edsvik-grebbestad" target="_blank" rel="noopener">First Camp Edsvik</a>
+                <span>Stugor och campingtomter vid en sandstrand strax utanför Grebbestad.</span>
+              </li>
+              <li>
+                <a href="https://saltvikscamping.se/" target="_blank" rel="noopener">Saltviks Camping &amp; Stugor</a>
+                <span>Camping och stugor i skärgården, ca 5 km från centrum.</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== OSA ===================== -->
+    <section class="section section--alt" id="osa">
+      <div class="container reveal">
+        <p class="eyebrow">Om svar anhålles</p>
+        <h2>OSA</h2>
+        <!-- TODO: sätt sista svarsdatum. Mottagare ställs in i js/main.js (RSVP_TO / RSVP_CC). -->
+        <p class="lead">
+          Har du fått en inbjudan till festen? Meddela oss senast <strong>[datum]</strong>
+          om du kommer, och om du har några allergier eller specialkost.
+        </p>
+        <!-- OSA-formulär: skickas till er mail via FormSubmit (se README) -->
+        <form class="rsvp" id="rsvp-form" novalidate>
+          <div class="field">
+            <label for="rsvp-name">Namn</label>
+            <input id="rsvp-name" name="Namn" type="text" autocomplete="name" required
+                   placeholder="Alla i sällskapet, t.ex. Anna och Erik Berg">
+          </div>
+
+          <div class="field">
+            <label for="rsvp-email">E-post</label>
+            <input id="rsvp-email" name="email" type="email" autocomplete="email" required
+                   placeholder="Så att vi kan nå dig">
+          </div>
+
+          <fieldset class="field">
+            <legend>Kommer du?</legend>
+            <label class="choice"><input type="radio" name="Kommer" value="Ja" required> Ja, självklart!</label>
+            <label class="choice"><input type="radio" name="Kommer" value="Nej"> Tyvärr kan jag/vi inte</label>
+          </fieldset>
+
+          <div class="field">
+            <label for="rsvp-count">Antal personer</label>
+            <input id="rsvp-count" name="Antal" type="number" min="1" max="10" value="1">
+          </div>
+
+          <div class="field">
+            <label for="rsvp-food">Allergier eller specialkost</label>
+            <input id="rsvp-food" name="Specialkost" type="text" placeholder="Lämna tomt om inget">
+          </div>
+
+          <div class="field">
+            <label for="rsvp-msg">Hälsning eller övrigt</label>
+            <textarea id="rsvp-msg" name="Meddelande" rows="3"></textarea>
+          </div>
+
+          <!-- Skydd mot spam-robotar, ska vara tomt och dolt -->
+          <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+
+          <button class="btn" type="submit">Skicka svar</button>
+          <p class="rsvp-status" id="rsvp-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== PRAKTISKT (FRÅGOR & SVAR) ===================== -->
+    <!-- Lägg till en fråga genom att kopiera ett <details>-block. -->
+    <section class="section" id="praktiskt">
+      <div class="container reveal">
+        <p class="eyebrow">Bra att veta</p>
+        <h2>Praktiskt</h2>
+        <svg class="waves waves--small" aria-hidden="true"><use href="#waves"/></svg>
+
+        <div class="faq">
+          <details>
+            <summary>Klädkod</summary>
+            <p>Klädkoden är kostym. Tänk på att septemberkvällar vid havet kan bli svala.</p>
+          </details>
+          <details>
+            <summary>Gåvor</summary>
+            <p>Er närvaro är den finaste gåvan, så vi önskar oss inga presenter. Vill man ändå uppmärksamma dagen blir vi väldigt glada för ett högst frivilligt bidrag till vår bröllopsresa. <!-- TODO: lägg till Swish-nummer eller kontonummer --></p>
+          </details>
+          <details>
+            <summary>Tal &amp; spex</summary>
+            <p>Tal är högst frivilligt – ingen kommer att tycka sämre om dig för att du bara äter, skålar och njuter. Känner du ändå att du <em>måste</em>, anmäler du dig till våra toastmasters Jonathan och Elin, som ser till att ingen talar längre än efterrätten orkar vänta. <!-- TODO: lägg till kontaktuppgifter --></p>
+            <p>Spex undanbes däremot med största allvar. Vi har sett tillräckligt.</p>
+          </details>
+          <details>
+            <summary>Barn</summary>
+            <p>Barn är hjärtligt välkomna! När basen börjar dunka framåt kvällen lämnar vi dock gärna över dansgolvet till de vuxna – så länge de hänger med, vill säga. Barn som dansar bättre än sina föräldrar är undantagna.</p>
+          </details>
+          <details>
+            <summary>Frågor?</summary>
+            <p>Hör gärna av dig till oss:<br>
+              Malin – <a href="mailto:malinjonson96@gmail.com">malinjonson96@gmail.com</a><br>
+              Gustav – <a href="mailto:gustavsp91@gmail.com">gustavsp91@gmail.com</a></p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== SIDFOT ===================== -->
+  <footer class="footer">
+    <span class="initials">M &amp; G</span>
+    11.09.2027 · Grebbestad
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
