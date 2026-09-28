@@ -2,7 +2,7 @@
    INSTÄLLNINGAR
    ========================================================================== */
 const WEDDING_DATE = new Date("2027-09-11T14:00:00+02:00"); // vigseln, svensk sommartid
-const THEMES = ["vastkust", "skog", "sand", "skymning", "solnedgang"];     // ska matcha css/themes.css
+const THEMES = ["vastkust", "skog", "sand", "skymning", "solnedgang", "sandhav"];     // ska matcha css/themes.css
 
 // OSA skickas via FormSubmit (formsubmit.co) till dessa adresser
 const RSVP_TO = "gustavsp91@gmail.com";

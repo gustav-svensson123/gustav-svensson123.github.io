@@ -101,3 +101,20 @@
   /* valfritt: bakgrund för toppen av sidan (andra teman saknar den och blir enfärgade) */
   --hero-bg:       linear-gradient(180deg, #434656 0%, #564A5A 55%, #7A5A5E 85%, #9A6A60 100%);
 }
+
+/* --- Sandhav: Sands varma ljusa bas med Skymnings havsblå som accent --- */
+[data-theme="sandhav"] {
+  --bg:            #F8F4EC;  /* sand */
+  --bg-alt:        #A7BCC9;  /* havsblå (Skymnings accent, något djupare) */
+  --surface:       #FFFDF9;
+  --text:          #3A342D;
+  --text-muted:    #736A5F;
+  --heading:       #342E27;
+  --accent:        #3E6178;  /* djup havsblå för knappar och detaljer */
+  --accent-strong: #2D4A5E;
+  --accent-soft:   #DCE6EC;
+  --on-accent:     #FFFFFF;
+  --line:          #E2D9CB;
+  --alt-text-muted:#3B3A36;
+  --alt-accent:    #22415A;
+}

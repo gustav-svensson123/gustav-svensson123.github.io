@@ -93,7 +93,8 @@ strong { font-weight: 500; }
   justify-content: center;
   text-align: center;
   padding: 4rem 1.25rem 2rem;
-  background: var(--hero-bg, transparent);
+  background: var(--hero-bg, var(--bg));
+  color: var(--text);
 }
 .hero .eyebrow { margin-bottom: 1.5rem; }
 .hero h1 {

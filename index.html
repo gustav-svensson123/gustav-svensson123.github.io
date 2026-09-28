@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- Byt färgtema här: vastkust | skog | sand | skymning | solnedgang  (se css/themes.css) -->
-<html lang="sv" data-theme="solnedgang">
+<!-- Byt färgtema här: vastkust | skog | sand | skymning | solnedgang | sandhav  (se css/themes.css) -->
+<html lang="sv" data-theme="sandhav">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +40,9 @@
   </nav>
 
   <!-- ===================== HERO ===================== -->
-  <header class="hero">
+  <!-- Toppen har ett eget tema (data-theme här) oberoende av resten av sidan.
+       Ta bort data-theme för att låta den följa sidans tema. -->
+  <header class="hero" data-theme="solnedgang">
     <p class="eyebrow">Vi gifter oss</p>
     <h1>Malin <span class="amp">&amp;</span> Gustav</h1>
     <p class="date">11 september 2027</p>
@@ -59,7 +61,7 @@
   <main>
 
     <!-- ===================== DAGEN: VIGSEL & FEST ===================== -->
-    <section class="section section--alt" id="dagen">
+    <section class="section" id="dagen">
       <div class="container reveal">
         <p class="eyebrow">Välkomna</p>
         <h2>Bröllopet</h2>
@@ -94,7 +96,7 @@
 
     <!-- ===================== SCHEMA ===================== -->
     <!-- Lägg till/ta bort rader genom att kopiera ett <li>-block. -->
-    <section class="section" id="schema">
+    <section class="section section--alt" id="schema">
       <div class="container reveal">
         <p class="eyebrow">Lördag 11 september</p>
         <h2>Schema</h2>
@@ -122,7 +124,7 @@
     </section>
 
     <!-- ===================== SÖNDAG: BRUNCH & BASTU ===================== -->
-    <section class="section section--alt" id="sondag">
+    <section class="section" id="sondag">
       <div class="container reveal">
         <p class="eyebrow">Söndag 12 september</p>
         <h2>Dagen efter</h2>
@@ -141,7 +143,7 @@
     </section>
 
     <!-- ===================== BOENDE ===================== -->
-    <section class="section" id="boende">
+    <section class="section section--alt" id="boende">
       <div class="container reveal">
         <p class="eyebrow">Resa &amp; boende</p>
         <h2>Boende</h2>
@@ -197,7 +199,7 @@
     </section>
 
     <!-- ===================== OSA ===================== -->
-    <section class="section section--alt" id="osa">
+    <section class="section" id="osa">
       <div class="container reveal">
         <p class="eyebrow">Om svar anhålles</p>
         <h2>OSA</h2>
@@ -252,7 +254,7 @@
 
     <!-- ===================== PRAKTISKT (FRÅGOR & SVAR) ===================== -->
     <!-- Lägg till en fråga genom att kopiera ett <details>-block. -->
-    <section class="section" id="praktiskt">
+    <section class="section section--alt" id="praktiskt">
       <div class="container reveal">
         <p class="eyebrow">Bra att veta</p>
         <h2>Praktiskt</h2>
