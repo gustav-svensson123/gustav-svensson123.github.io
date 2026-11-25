@@ -133,6 +133,11 @@ strong { font-weight: 500; }
   color: var(--accent);
   padding: 0 .1em;
 }
+/* Små skärmar: namnen på tre rader (Malin / & / Gustav) istället för att radbrytas på fel ställe */
+@media (max-width: 600px) {
+  .hero h1 { line-height: 1.05; }
+  .hero h1 .amp { display: block; padding: 0; font-size: .85em; line-height: 1; }
+}
 .hero .date {
   font-family: var(--font-heading);
   font-size: clamp(1.35rem, 4vw, 1.75rem);
