@@ -27,9 +27,17 @@
     </symbol>
   </svg>
 
-  <!-- ===================== NAVIGERING ===================== -->
+  <!-- ===================== NAVIGERING / FLIKAR ===================== -->
+  <!-- Översta raden: de två flikarna "Save the Date" och "Wedding".
+       Vilka flikar som syns styrs av VISIBLE_TABS i js/main.js.
+       Andra raden (nav-sub) är undermenyn för Wedding-fliken och syns bara där.
+       Länkarna i den scrollar till respektive del av sidan. -->
   <nav class="nav" aria-label="Huvudmeny">
-    <ul>
+    <ul class="nav-tabs">
+      <li><a href="#save-the-date">Save the Date</a></li>
+      <li><a href="#brollop">Wedding</a></li>
+    </ul>
+    <ul class="nav-sub" data-tab="brollop">
       <li><a href="#dagen">Bröllopet</a></li>
       <li><a href="#schema">Schema</a></li>
       <li><a href="#sondag">Söndag</a></li>
@@ -39,10 +47,34 @@
     </ul>
   </nav>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- ===================== FLIK: SAVE THE DATE ===================== -->
+  <section class="hero save-the-date" id="save-the-date" data-tab="save-the-date" data-theme="bukett-mork">
+    <!-- Porträtt av oss. Byt bild genom att ersätta filen eller ändra src
+         (en .gif eller animerad .webp fungerar också). -->
+    <!-- Tidigare porträtt finns kvar: bilder/malin-och-gustav.jpg (width="800" height="875") -->
+    <img class="std-portrait" src="bilder/malin-och-gustav-kusten.jpg" width="720" height="1080"
+         alt="Akvarell av Malin och Gustav på klipporna vid havet, med röda trähus och en segelbåt i bakgrunden">
+
+    <p class="eyebrow">Save the date</p>
+    <h1>Malin <span class="amp">&amp;</span> Gustav</h1>
+    <p class="date">27 maj 2028</p>
+    <p class="place">Grebbestad · Bohuslän</p>
+
+    <svg class="waves" aria-hidden="true"><use href="#waves"/></svg>
+
+    <div class="countdown" aria-label="Nedräkning till bröllopet">
+      <div><span class="num" data-unit="days">–</span><span class="label">Dagar</span></div>
+      <div><span class="num" data-unit="hours">–</span><span class="label">Timmar</span></div>
+      <div><span class="num" data-unit="minutes">–</span><span class="label">Minuter</span></div>
+    </div>
+
+    <p class="std-more">Boka in dagen – inbjudan och mer information kommer.</p>
+  </section>
+
+  <!-- ===================== HERO (början av fliken "brollop") ===================== -->
   <!-- Toppen har ett eget tema (data-theme här) oberoende av resten av sidan.
        Ta bort data-theme för att låta den följa sidans tema. -->
-  <header class="hero" data-theme="bukett-mork">
+  <header class="hero" id="brollop" data-tab="brollop" data-theme="bukett-mork">
     <p class="eyebrow">Vi gifter oss</p>
     <h1>Malin <span class="amp">&amp;</span> Gustav</h1>
     <p class="date">27 maj 2028</p>
@@ -51,7 +83,7 @@
     <svg class="waves" aria-hidden="true"><use href="#waves"/></svg>
 
     <!-- Nedräkning – datum och tid ställs in i js/main.js -->
-    <div class="countdown" id="countdown" aria-label="Nedräkning till bröllopet">
+    <div class="countdown" aria-label="Nedräkning till bröllopet">
       <div><span class="num" data-unit="days">–</span><span class="label">Dagar</span></div>
       <div><span class="num" data-unit="hours">–</span><span class="label">Timmar</span></div>
       <div><span class="num" data-unit="minutes">–</span><span class="label">Minuter</span></div>
@@ -61,13 +93,13 @@
   <main>
 
     <!-- ===================== DAGEN: VIGSEL & FEST ===================== -->
-    <section class="section" id="dagen">
+    <section class="section" id="dagen" data-tab="brollop">
       <div class="container reveal">
         <p class="eyebrow">Välkomna</p>
         <h2>Bröllopet</h2>
         <p class="lead">
           Vi ser så mycket fram emot att fira den här dagen tillsammans med er
-          – vid havet i Grebbestad, en tidig höstdag på västkusten.
+          – vid havet i Grebbestad, en försommardag på västkusten.
         </p>
 
         <div class="cards">
@@ -96,7 +128,7 @@
 
     <!-- ===================== SCHEMA ===================== -->
     <!-- Lägg till/ta bort rader genom att kopiera ett <li>-block. -->
-    <section class="section section--alt" id="schema">
+    <section class="section section--alt" id="schema" data-tab="brollop">
       <div class="container reveal">
         <p class="eyebrow">Lördag 27 maj</p>
         <h2>Schema</h2>
@@ -124,7 +156,7 @@
     </section>
 
     <!-- ===================== SÖNDAG: BRUNCH & BASTU ===================== -->
-    <section class="section" id="sondag">
+    <section class="section" id="sondag" data-tab="brollop">
       <div class="container reveal">
         <p class="eyebrow">Söndag 28 maj</p>
         <h2>Dagen efter</h2>
@@ -143,7 +175,7 @@
     </section>
 
     <!-- ===================== BOENDE ===================== -->
-    <section class="section section--alt" id="boende">
+    <section class="section section--alt" id="boende" data-tab="brollop">
       <div class="container reveal">
         <p class="eyebrow">Resa &amp; boende</p>
         <h2>Boende</h2>
@@ -199,7 +231,7 @@
     </section>
 
     <!-- ===================== OSA ===================== -->
-    <section class="section" id="osa">
+    <section class="section" id="osa" data-tab="brollop">
       <div class="container reveal">
         <p class="eyebrow">Om svar anhålles</p>
         <h2>OSA</h2>
@@ -254,7 +286,7 @@
 
     <!-- ===================== PRAKTISKT (FRÅGOR & SVAR) ===================== -->
     <!-- Lägg till en fråga genom att kopiera ett <details>-block. -->
-    <section class="section section--alt" id="praktiskt">
+    <section class="section section--alt" id="praktiskt" data-tab="brollop">
       <div class="container reveal">
         <p class="eyebrow">Bra att veta</p>
         <h2>Praktiskt</h2>

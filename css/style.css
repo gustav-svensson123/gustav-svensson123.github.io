@@ -78,9 +78,18 @@ strong { font-weight: 500; }
   text-transform: uppercase;
 }
 .nav a:hover { color: var(--accent); }
+.nav a[aria-current="page"] { color: var(--accent); border-bottom: 1px solid var(--accent); }
+/* Flikraden är lite större; undermenyn (bara på Wedding-fliken) ligger under en tunn linje */
+.nav-tabs a { font-size: .9rem; color: var(--text); }
+.nav ul.nav-sub { padding-top: .55rem; padding-bottom: .6rem; border-top: 1px solid var(--line); }
+.nav-sub a { font-size: .7rem; }
+[hidden] { display: none !important; }  /* flikar som inte visas */
 @media (max-width: 480px) {
   .nav ul { gap: .35rem 1rem; }
   .nav a  { font-size: .7rem; letter-spacing: .1em; }
+  .nav-tabs a { font-size: .8rem; }
+  .nav ul.nav-sub { gap: .35rem .7rem; }
+  .nav-sub a { font-size: .65rem; letter-spacing: .06em; }
 }
 
 /* --- Hero (toppen av sidan) --- */
@@ -120,6 +129,34 @@ strong { font-weight: 500; }
   letter-spacing: .25em;
   text-transform: uppercase;
   color: var(--text-muted);
+}
+
+/* --- Save the date-fliken (använder samma stil som .hero) --- */
+.save-the-date { min-height: 100vh; min-height: 100svh; }
+.std-portrait {
+  /* porträttet: mjukt rundade hörn, tunn ljus ram och en diskret skugga */
+  width: min(320px, 70vw);  /* bilden är hög (2:3), så den hålls lite smalare */
+  height: auto;
+  margin-bottom: 2.25rem;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--text) 25%, transparent);
+  padding: 6px;
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .35);
+  animation: std-fade 1.4s ease both;
+}
+@keyframes std-fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .std-portrait { animation: none; }
+}
+.std-more {
+  margin-top: 2.5rem;
+  max-width: 28rem;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 /* Vågor – en diskret nick till västkusten */

@@ -2,6 +2,13 @@
    INSTÄLLNINGAR
    ========================================================================== */
 const WEDDING_DATE = new Date("2028-05-27T14:00:00+02:00"); // vigseln, svensk sommartid
+// Vilka flikar som syns på sidan (namnen = data-tab i index.html):
+//   "save-the-date"  – bara namn, datum och nedräkning
+//   "brollop"        – fliken "Wedding": hela bröllopssidan (Bröllopet, Schema, Söndag, Boende, OSA, Praktiskt)
+// Första fliken i listan visas när man öppnar sidan. Bara en flik => menyn göms helt.
+// Exempel: bara save the date = ["save-the-date"]
+const VISIBLE_TABS = ["save-the-date", "brollop"];
+
 const THEMES = ["bukett", "bukett-mork", "vastkust", "skog", "sand", "skymning", "solnedgang", "sandhav"];     // ska matcha css/themes.css
 
 // OSA skickas via FormSubmit (formsubmit.co) till dessa adresser
@@ -13,12 +20,10 @@ const RSVP_CC = "malinjonson96@gmail.com";
    NEDRÄKNING
    ========================================================================== */
 function updateCountdown() {
-  const el = document.getElementById("countdown");
-  if (!el) return;
-
+  const els = document.querySelectorAll(".countdown");
   const diff = WEDDING_DATE - new Date();
   if (diff <= 0) {
-    el.innerHTML = '<p class="date">Nu är vi gifta!</p>';
+    els.forEach((el) => { el.innerHTML = '<p class="date">Nu är vi gifta!</p>'; });
     return;
   }
 
@@ -28,12 +33,59 @@ function updateCountdown() {
     hours:   Math.floor((minutes % 1440) / 60),
     minutes: minutes % 60,
   };
-  for (const [unit, value] of Object.entries(values)) {
-    el.querySelector(`[data-unit="${unit}"]`).textContent = value;
+  for (const el of els) {
+    for (const [unit, value] of Object.entries(values)) {
+      const num = el.querySelector(`[data-unit="${unit}"]`);
+      if (num) num.textContent = value;
+    }
   }
 }
 updateCountdown();
 setInterval(updateCountdown, 30 * 1000);
+
+
+/* ==========================================================================
+   FLIKAR
+   Bara en flik visas åt gången. Adressen får #fliknamn så att länkar,
+   bakåtknappen och bokmärken fungerar. Flikar som inte finns i
+   VISIBLE_TABS göms helt (men finns fortfarande i HTML-koden).
+   ========================================================================== */
+const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+const tabParts = [...document.querySelectorAll("[data-tab]")];
+
+// Vilken flik hör ett #id till? (fliknamnet självt, eller fliken som innehåller elementet)
+function tabOf(id) {
+  if (!id) return null;
+  if (VISIBLE_TABS.includes(id)) return id;
+  const part = document.getElementById(id)?.closest("[data-tab]");
+  return part ? part.dataset.tab : null;
+}
+
+// Göm flikar som är avstängda. Bara en flik => fliklisten göms, och om den fliken
+// inte har någon undermeny göms hela menyn.
+for (const link of document.querySelectorAll(".nav-tabs a")) {
+  link.parentElement.hidden = !VISIBLE_TABS.includes(link.hash.slice(1));
+}
+document.querySelector(".nav-tabs").hidden = VISIBLE_TABS.length < 2;
+document.querySelector(".nav").hidden =
+  VISIBLE_TABS.length < 2 && !VISIBLE_TABS.includes("brollop");
+
+function showTab() {
+  const id = location.hash.slice(1);
+  const wanted = tabOf(id);
+  const tab = VISIBLE_TABS.includes(wanted) ? wanted : VISIBLE_TABS[0];
+  for (const part of tabParts) part.hidden = part.dataset.tab !== tab;
+  for (const link of navLinks) {
+    if (link.hash.slice(1) === tab) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  }
+  // Länk till en del av fliken (t.ex. #schema): scrolla dit, annars till toppen
+  const target = wanted === tab && id !== tab ? document.getElementById(id) : null;
+  if (target) target.scrollIntoView();
+  else window.scrollTo(0, 0);
+}
+showTab();
+window.addEventListener("hashchange", showTab);
 
 
 /* ==========================================================================
