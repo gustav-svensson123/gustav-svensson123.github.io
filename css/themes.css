@@ -14,8 +14,44 @@
    Alla färger på sidan kommer från dessa variabler – inga andra filer behöver ändras.
    ========================================================================== */
 
-/* --- Västkust (standard): varmvitt, granitgrått och dimmigt havsblått --- */
+/* --- Bukett (standard): färgerna från brudbuketten – elfenben, burgund, oliv och salvia --- */
 :root,
+[data-theme="bukett"] {
+  --bg:            #F5F0E8;  /* ljust elfenben */
+  --bg-alt:        #D7CEBF;  /* elfenben/greige, varannan sektion */
+  --surface:       #FBF8F3;  /* kort/rutor */
+  --text:          #2E2A24;  /* brödtext */
+  --text-muted:    #5B5E3F;  /* oliv, sekundär text */
+  --heading:       #380A14;  /* mörk burgund */
+  --accent:        #591824;  /* burgund: knappar, detaljer */
+  --accent-strong: #380A14;  /* mörk burgund vid hover */
+  --accent-soft:   #E8DDD6;  /* ljus rosé-greige: bakgrunder, ramar */
+  --on-accent:     #FFFFFF;  /* text på accentfärg */
+  --line:          #CDC3B7;  /* varm greige, tunna linjer */
+  --alt-text-muted:#353914;  /* mörk oliv på --bg-alt */
+  --alt-accent:    #591824;  /* burgund på --bg-alt */
+}
+
+/* --- Bukett mörk: mörk burgund med salvia, används för toppen av sidan --- */
+[data-theme="bukett-mork"] {
+  --bg:            #380A14;  /* mörk burgund */
+  --bg-alt:        #591824;  /* burgund */
+  --surface:       #4A1420;
+  --text:          #F3ECE2;
+  --text-muted:    #CDC3B7;  /* varm greige */
+  --heading:       #F5F0E8;
+  --accent:        #B4B892;  /* ljus salvia */
+  --accent-strong: #CDD0B0;
+  --accent-soft:   #4A1420;
+  --on-accent:     #380A14;
+  --line:          #6A2A35;
+  --alt-text-muted:#E3DCCF;
+  --alt-accent:    #CDD0B0;
+  /* bakgrund för toppen: mörk burgund som ljusnar nedåt */
+  --hero-bg:       linear-gradient(180deg, #380A14 0%, #46101C 60%, #591824 100%);
+}
+
+/* --- Västkust: varmvitt, granitgrått och dimmigt havsblått --- */
 [data-theme="vastkust"] {
   --bg:            #F7F5F0;  /* sidans bakgrund */
   --bg-alt:        #A5B2C6;  /* varannan sektion */

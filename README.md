@@ -14,7 +14,7 @@ kalender.ics      "Add to calendar" file for the ceremony.
 
 | I want to…                  | Do this |
 |-----------------------------|---------|
-| Switch theme                | Change `data-theme="vastkust"` on the `<html>` tag in `index.html` (`vastkust`, `skog`, `sand`, `skymning`). |
+| Switch theme                | Change `data-theme="bukett"` on the `<html>` tag in `index.html` (`bukett`, `bukett-mork`, `vastkust`, `skog`, `sand`, `skymning`, `solnedgang`, `sandhav`). The hero has its own `data-theme` (`bukett-mork`). |
 | Compare themes live         | Open `index.html?teman`, a picker appears bottom-right. |
 | Tweak a colour              | Edit the variable in `css/themes.css`. |
 | Add a theme                 | Copy a block in `themes.css`, rename it, then add the name to `THEMES` in `js/main.js` (only needed for the preview picker). |

@@ -3,10 +3,10 @@ VERSION:2.0
 PRODID:-//Malin och Gustav//Brollop//SV
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
-UID:brollop-malin-gustav-20270911@grebbestad
-DTSTAMP:20260928T120000Z
-DTSTART:20270911T120000Z
-DTEND:20270911T130000Z
+UID:brollop-malin-gustav-20280527@grebbestad
+DTSTAMP:20261125T120000Z
+DTSTART:20280527T120000Z
+DTEND:20280527T130000Z
 SUMMARY:Vigsel – Malin & Gustav
 LOCATION:Grebbestad kyrka\, Grebbestad
 DESCRIPTION:Vigsel i Grebbestad kyrka kl. 14.00. Bröllopsfest för inbjudna gäster på Falkeröd från kl. 17.00.
