@@ -79,8 +79,25 @@ strong { font-weight: 500; }
 }
 .nav a:hover { color: var(--accent); }
 .nav a[aria-current="page"] { color: var(--accent); border-bottom: 1px solid var(--accent); }
-/* Flikraden är lite större; undermenyn (bara på Wedding-fliken) ligger under en tunn linje */
+/* Flikraden är lite större; undermenyn (bara på Bröllop-fliken) ligger under en tunn linje */
 .nav-tabs a { font-size: .9rem; color: var(--text); }
+/* Avstängd flik (DISABLED_TABS i js/main.js): blek, ingen hover, "kommer snart" under */
+.nav-tabs a.is-disabled {
+  color: var(--text-muted);
+  opacity: .6;
+  cursor: not-allowed;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-tabs a.is-disabled:hover { color: var(--text-muted); }
+.nav-tabs a.is-disabled small {
+  font-size: .6rem;
+  letter-spacing: .12em;
+  text-transform: none;
+  font-style: italic;
+  margin-top: .1rem;
+}
 .nav ul.nav-sub { padding-top: .55rem; padding-bottom: .6rem; border-top: 1px solid var(--line); }
 .nav-sub a { font-size: .7rem; }
 [hidden] { display: none !important; }  /* flikar som inte visas */

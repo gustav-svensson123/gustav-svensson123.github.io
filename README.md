@@ -16,6 +16,7 @@ kalender.ics      "Add to calendar" file for the ceremony.
 |-----------------------------|---------|
 | Switch theme                | Change `data-theme="bukett"` on the `<html>` tag in `index.html` (`bukett`, `bukett-mork`, `vastkust`, `skog`, `sand`, `skymning`, `solnedgang`, `sandhav`). The hero has its own `data-theme` (`bukett-mork`). |
 | Show / hide tabs            | Edit `VISIBLE_TABS` at the top of `js/main.js`. Tabs: `"save-the-date"` and `"brollop"` (the full site). `["save-the-date"]` publishes only the save the date; with one tab the menu is hidden. Hidden tabs are still in the HTML source, so don't put secrets there. |
+| Grey out a tab              | Add it to `DISABLED_TABS` in `js/main.js` (now `["brollop"]`, the Bröllop tab). It stays in the menu, marked "Kommer snart", but can't be opened, and direct links to it go to Save the Date. Set to `[]` to open it. |
 | Compare themes live         | Open `index.html?teman`, a picker appears bottom-right. |
 | Tweak a colour              | Edit the variable in `css/themes.css`. |
 | Add a theme                 | Copy a block in `themes.css`, rename it, then add the name to `THEMES` in `js/main.js` (only needed for the preview picker). |

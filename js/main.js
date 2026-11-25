@@ -4,10 +4,16 @@
 const WEDDING_DATE = new Date("2028-05-27T14:00:00+02:00"); // vigseln, svensk sommartid
 // Vilka flikar som syns på sidan (namnen = data-tab i index.html):
 //   "save-the-date"  – bara namn, datum och nedräkning
-//   "brollop"        – fliken "Wedding": hela bröllopssidan (Bröllopet, Schema, Söndag, Boende, OSA, Praktiskt)
+//   "brollop"        – fliken "Bröllop": hela bröllopssidan (Bröllopet, Schema, Söndag, Boende, OSA, Praktiskt)
 // Första fliken i listan visas när man öppnar sidan. Bara en flik => menyn göms helt.
 // Exempel: bara save the date = ["save-the-date"]
 const VISIBLE_TABS = ["save-the-date", "brollop"];
+
+// Flikar som syns i menyn men inte går att klicka på (gråade, "kommer snart").
+// Direktlänkar dit (t.ex. #schema) skickas också tillbaka till första öppna fliken.
+// Öppna Bröllop-fliken: ändra till [].
+const DISABLED_TABS = ["brollop"];
+const DISABLED_HINT = "Kommer snart";   // liten text under en avstängd flik
 
 const THEMES = ["bukett", "bukett-mork", "vastkust", "skog", "sand", "skymning", "solnedgang", "sandhav"];     // ska matcha css/themes.css
 
@@ -70,10 +76,26 @@ document.querySelector(".nav-tabs").hidden = VISIBLE_TABS.length < 2;
 document.querySelector(".nav").hidden =
   VISIBLE_TABS.length < 2 && !VISIBLE_TABS.includes("brollop");
 
+// Flikar man faktiskt kan öppna
+const OPEN_TABS = VISIBLE_TABS.filter((t) => !DISABLED_TABS.includes(t));
+
+// Avstängda flikar: gråa, går inte att klicka på eller tabba till
+for (const link of document.querySelectorAll(".nav-tabs a")) {
+  if (!DISABLED_TABS.includes(link.hash.slice(1))) continue;
+  link.classList.add("is-disabled");
+  link.setAttribute("aria-disabled", "true");
+  link.setAttribute("tabindex", "-1");
+  link.title = DISABLED_HINT;
+  link.insertAdjacentHTML("beforeend", `<small>${DISABLED_HINT}</small>`);
+  link.addEventListener("click", (event) => event.preventDefault());
+}
+
 function showTab() {
   const id = location.hash.slice(1);
   const wanted = tabOf(id);
-  const tab = VISIBLE_TABS.includes(wanted) ? wanted : VISIBLE_TABS[0];
+  const tab = OPEN_TABS.includes(wanted) ? wanted : OPEN_TABS[0];
+  // Avstängd eller okänd flik i adressen: ta bort #-delen så att den inte ligger kvar
+  if (id && wanted !== tab) history.replaceState(null, "", location.pathname + location.search);
   for (const part of tabParts) part.hidden = part.dataset.tab !== tab;
   for (const link of navLinks) {
     if (link.hash.slice(1) === tab) link.setAttribute("aria-current", "page");
